@@ -8,12 +8,9 @@ using System.Threading.Tasks;
 using TestMenue.Commands;
 
 
-namespace TestMenue
-{
-    class Utils
-    {
-        public static List<Command> initCommands() //All Commands have to be put into the Dictionarry 
-        {
+namespace TestMenue {
+    class Utils {
+        public static List<Command> initCommands() {
             List<Command> c = new List<Command>();
             //put into with c.Add(new "Command-Class*);
             #region Commands
@@ -21,57 +18,46 @@ namespace TestMenue
             c.Add(new Cmd_Clear());
             c.Add(new Cmd_Ping());
 
-            
-            
+
+
             #endregion
             return c;
         }
 
-        internal static void generateCommandList(List< Command> commands)
-        {
+        internal static void generateCommandList(List<Command> commands) {
 
             int i = 0;
-            foreach(Command s in commands){
-                Console.WriteLine("[" + i + "]\t"+ s.name + "  " + getHelpForCommand(s));
+            foreach (Command s in commands) {
+                Console.WriteLine("[" + i + "]\t" + s.name + "  " + getHelpForCommand(s));
                 i++;
             }
 
         }
-        public static bool Confirm()
-        {
+        public static bool Confirm() {
             bool ret = false;
             string c = "";
-            do
-            {
+            do {
                 Console.WriteLine("Type Yes(y)/No(y)");
                 c = Console.ReadLine();
 
-                ret = c.Equals( "y");
+                ret = c.Equals("y");
             } while (!c.Equals("y") && !c.Equals("n"));
 
-
             return ret;
-
-
-                 
-
         }
 
         #region BatCommandExecuters
 
-        public static void ExecuteCommand(string command)
-        {
+        public static void ExecuteCommand(string command) {
             ExecuteCommand(command, false, false);
         }
 
-        public static void ExecuteCommand(string command, bool showConsole)
-        {
+        public static void ExecuteCommand(string command, bool showConsole) {
             ExecuteCommand(command, showConsole, false);
         }
-        
 
-        public static void ExecuteCommand(string command, bool showConsole ,bool useAdminpermition)
-        {
+
+        public static void ExecuteCommand(string command, bool showConsole, bool useAdminpermition) {
             int ExitCode;
             ProcessStartInfo ProcessInfo;
             Process Process;
@@ -90,21 +76,17 @@ namespace TestMenue
 
 
         }
-#endregion
+        #endregion
         #region helpgenerators
-        public static string getHelpForCommand(Command c)
-        {
-            try
-            {
+        public static string getHelpForCommand(Command c) {
+            try {
                 return !c.help.Equals("") ? c.help : ("!The help for " + c.name + " is not implemented yet");
-            }
-            catch
-            {
+            } catch {
                 return "!The help for " + c.name + " is not implemented yet";
             }
 
         }
-       
+
         #endregion
     }
 }

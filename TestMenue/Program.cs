@@ -10,21 +10,15 @@ namespace TestMenue
 {
     class Program
     {
-
         public static List<Command> commands = Utils.initCommands();
         public static StartupConfig conf;
         static void Main(string[] args)
         {
-           
-
-
+ 
             conf = new StartupConfig(args);
-            Utils.generateCommandList(commands);
-            
+            Utils.generateCommandList(commands);  
 
             CommandHandler cm = new CommandHandler(commands);
-
-            
 
             while (true)
             {
@@ -41,11 +35,8 @@ namespace TestMenue
                 {
                     Console.WriteLine(e.ToString());
                 }
-                
-
 
             }
-
             Console.ReadKey();
         }
     }
