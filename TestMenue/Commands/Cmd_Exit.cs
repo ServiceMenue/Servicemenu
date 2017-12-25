@@ -8,7 +8,7 @@ namespace TestMenue.Commands
 {
     class Cmd_Exit : Command
     {
-        public string help { get; } = "";
+        public string help { get; } = "Exits Menue";
 
         public string name { get; } = "Exit";
 
