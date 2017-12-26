@@ -45,6 +45,28 @@ namespace TestMenue {
 
             return ret;
         }
+        public static int selection(params String[] cases) {
+            int i = 0;
+            foreach (String s in cases) {
+                Console.WriteLine(i + "\t" + s);
+                i++;
+            }
+            int inp = -1;
+            while(inp < 0) {
+                try {
+                    inp = Convert.ToInt32(Console.ReadLine());
+                } catch {
+                    Console.WriteLine("Please insert a valid Number");
+                }
+                if(inp >= cases.Length) {
+                    inp = -1;
+                }
+
+            }
+            return inp;
+
+        }
+
 
         #region BatCommandExecuters
 

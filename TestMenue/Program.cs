@@ -14,7 +14,7 @@ namespace TestMenue
         public static StartupConfig conf;
         static void Main(string[] args)
         {
- 
+            
             conf = new StartupConfig(args);
             Utils.generateCommandList(commands);  
 
