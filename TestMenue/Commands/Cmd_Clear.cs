@@ -12,7 +12,7 @@ namespace TestMenue.Commands {
 
         public void execNogui(string[] args) {
             Console.Clear();
-            Utils.generateCommandList(Program.commands);
+            Utils.printHomeScreen(Program.commands);
         }
     }
 }

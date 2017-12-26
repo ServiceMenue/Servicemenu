@@ -12,7 +12,7 @@ namespace TestMenue {
     class Utils {
         public static List<Command> initCommands() {
             List<Command> c = new List<Command>();
-            //put into with c.Add(new "Command-Class*);
+            //put into with c.Add(new "Command-Class");
             #region Commands
             c.Add(new Cmd_Exit());
             c.Add(new Cmd_Clear());
@@ -24,7 +24,7 @@ namespace TestMenue {
             return c;
         }
 
-        internal static void generateCommandList(List<Command> commands) {
+        internal static void printHomeScreen(List<Command> commands) {
 
             int i = 0;
             foreach (Command s in commands) {
@@ -33,6 +33,7 @@ namespace TestMenue {
             }
 
         }
+        #region SelectionOutputs
         public static bool Confirm() {
             bool ret = false;
             string c = "";
@@ -66,8 +67,7 @@ namespace TestMenue {
             return inp;
 
         }
-
-
+#endregion
         #region BatCommandExecuters
 
         public static void ExecuteCommand(string command) {

@@ -16,7 +16,7 @@ namespace TestMenue
         {
             
             conf = new StartupConfig(args);
-            Utils.generateCommandList(commands);  
+            Utils.printHomeScreen(commands);  
 
             CommandHandler cm = new CommandHandler(commands);
 
