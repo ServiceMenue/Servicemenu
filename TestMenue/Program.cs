@@ -8,7 +8,7 @@ using TestMenue.Commands;
 
 namespace TestMenue
 {
-    class Program
+    class Program  
     {
          
         public static List<Command> commands = Utils.initCommands();
