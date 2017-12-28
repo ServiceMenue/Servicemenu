@@ -10,6 +10,7 @@ namespace TestMenue
 {
     class Program
     {
+         
         public static List<Command> commands = Utils.initCommands();
         public static StartupConfig conf;
         static void Main(string[] args)
